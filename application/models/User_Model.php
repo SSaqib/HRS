@@ -40,11 +40,10 @@
                 $data = array(
                     'username' => $username,
                     'password' => $this->input->post('password'),
-                    'age' => $this->input->post('age'),
-                    'weight' => $this->input->post('weight'),
-                    'height' => $this->input->post('height'),
+                    'email' => $this->input->post('email'),
+                    
                 );
-                $this->db->insert('user', $data);
+                $this->db->insert('User', $data);
                 return true;
             }
             
