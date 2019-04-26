@@ -6,20 +6,6 @@
                 $this->load->database();
         }
 
-        public function isUserExist($username, $password) {
-                
-            $query = "SELECT * FROM user WHERE username = ? AND password = ?";
-            $query = $this->db->query($query, array($username, $password));
-            $result = $query->row();
-
-            if($query->num_rows() == 1) {
-               
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
 
         public function userExists($username) {
                 

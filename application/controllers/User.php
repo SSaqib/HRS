@@ -1,7 +1,7 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	class API extends CI_Controller {
+	class User extends CI_Controller {
 
 		public function __construct() {
 			parent::__construct();
@@ -15,18 +15,20 @@
 
 			if($this->User_Model->createUser($username)){
 				echo json_encode(array(
-					'message' => array(
-						'msg' => 'user registered successfully',
-						'code' => '200',
-						),
+					
+						'mmsg' => 'user registered successfully',
+						'true' => 'true',
+						'username'=> $username,
+						
 				));
 			}
 			else{
 				echo json_encode(array(
-					'message' => array(
+					
 						'msg' => 'Error while registering',
-						'code' => '101',
-					),
+						'status' => 'false',
+						
+					
 				));
 			}
 		}
