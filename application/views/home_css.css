@@ -123,9 +123,25 @@ button.submitbtn
 	color:#00A654;
 }
 
+a.mybutton:focus{
+font-size:200%;
+color:#4DFFA6;
+border:none;
+box-shadow: none;
+}
+
+
+a.mybutton:hover{
+
+	color:#00FF80;
+	border:none;
+	box-shadow: none;
+	}
+	
 
 button.submitbtn:hover{
-	
+	background-color:#268053;
+	color:white;
 }
 
 
@@ -142,7 +158,7 @@ button.submitbtn:hover{
 a.mybutton{
 	background-color:#00A654;
 	color:white;
-	font-size:1.6vw;
+	font-size:150%;
 	
 }
 
@@ -153,3 +169,83 @@ a.mybutton{
 html,body,div{
 	height:100%;
 }  */
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 200px),(max-width: 800px) {
+	div.vline
+	{
+		display: none;
+	}
+	body{
+		font-size:100%;
+	}
+
+	div.myc12
+	{
+		margin-top :0;
+		padding-top:0;
+	}
+
+	
+a.mybutton{
+	font-size:150%;
+	color:white;
+	border:none;
+	box-shadow: none;
+	}
+
+
+	div.myc2{
+		margin-top:5vh;
+		padding-top:5vh;
+		text-align: center;
+		
+	}
+
+	div.choices{
+		margin-left:0;
+		padding-left:0;
+		margin-right:5%;
+		text-align: center;
+		margin-top:0;
+		padding-top:0;
+		margin-bottom:0;
+	}
+	
+
+	a.mybutton:focus{
+		font-size:200%;
+		margin:0;
+		padding:0;
+		color:#4DFFA6;
+		border:none;
+		box-shadow: none;
+		}
+		
+
+
+		div.outerdiv 
+		{
+			margin-bottom:10%;
+			padding-top:0;
+			padding-right:5%;
+			padding-left:5%;
+
+		}
+
+
+		
+input.form-control{
+
+	padding-top:3%;
+
+}
+
+}
