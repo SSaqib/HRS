@@ -20,13 +20,13 @@
             }
         }
 
-        public function createUser($username){
+        public function createUser($username,$password,$email){
 
             if(!($this->userExists($username))){
                 $data = array(
                     'username' => $username,
-                    'password' => $this->input->post('password'),
-                    'email' => $this->input->post('email'),
+                    'password' => $password,
+                    'email' => $email,
                     
                 );
                 $this->db->insert('User', $data);
