@@ -1,0 +1,63 @@
+nav.navbar{
+    background-color:#00A654;
+    padding:0;
+    color:white;
+}
+
+a.nav-link{
+    color:white;
+}
+
+a.nav-link:hover{
+    background-color:white;
+    color:#00A654;
+    border-radius: 80%;
+}
+
+body{
+    background-color:white;
+}
+
+
+
+@keyframes marquee {
+    0% {
+      margin-left: 100%;
+      transform: translateX(0%);
+    }
+    100% {
+      margin-left: 0;
+      transform: translateX(-100%);
+    }
+  }
+  
+  .section {
+    overflow: hidden;
+    background-color: #70FFAF;
+    padding:1px;
+  }
+  
+    .marquee {
+      animation: marquee 125s linear infinite;
+      display: inline-block;
+      white-space: nowrap;
+    }
+  
+      :hover {
+        animation-play-state: paused;
+      }
+    
+  
+  
+  .text-styling {
+    background-color: #70FFAF;
+    padding: 1px;
+    margin:2px;
+    font-size:1.5vw;
+  }
+
+  
+
+  div.status{
+      border:2px solid green;
+  }

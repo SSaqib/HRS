@@ -152,6 +152,7 @@ button.submitbtn:hover{
 .mycomp
 {
 	font-weight: 700;
+
 	
 }
 
@@ -178,7 +179,7 @@ html,body,div{
 
 
 
-@media only screen and (min-width: 200px),(max-width: 800px) {
+@media only screen  and  (min-width: 410px) and (max-width: 770px) {
 	div.vline
 	{
 		display: none;
@@ -236,7 +237,7 @@ a.mybutton{
 			margin-bottom:10%;
 			padding-top:0;
 			padding-right:5%;
-			padding-left:5%;
+			padding-left:7%;
 
 		}
 
@@ -248,4 +249,83 @@ input.form-control{
 
 }
 
+}
+
+
+
+@media only screen and  (min-width: 770px) and (max-width: 1195px) {
+	div.choices{
+		margin-left:0;
+		padding-left:0;
+		margin-right:0%;
+		text-align: center;
+		margin-top:0;
+		padding-top:0;
+		margin-bottom:0;
+	}
+
+	div.outerdiv 
+	{
+		margin-bottom:10%;
+		padding-top:0;
+		padding-right:0%;
+		padding-left:0%;
+
+	}
+
+
+		
+a.mybutton{
+	font-size:160%;
+
+	}
+
+	
+	a.mybutton:focus{
+		font-size:220%;
+		margin:0;
+		padding:0;
+		color:#4DFFA6;
+		border:none;
+		box-shadow: none;
+		}
+		
+
+}
+
+
+
+
+
+
+
+@media only screen  and  (max-width: 410px)
+{
+	
+	div.outerdiv 
+	{
+		margin-bottom:10%;
+		padding-top:0;
+		margin-top:0;
+		padding-top:0;
+		margin-right:5%;
+		margin-left:5%;
+	
+		text-align: center;
+	}
+
+
+	div.vline
+	{
+		display: none;
+	}
+
+
+	.mycomp
+	{
+
+		font-size: 8vw;
+		margin-top:0;
+		
+	}
 }
