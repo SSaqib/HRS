@@ -11,7 +11,7 @@ a.nav-link{
 a.nav-link:hover{
     background-color:white;
     color:#00A654;
-    border-radius: 80%;
+    border-radius: 5%;
 }
 
 body{
@@ -21,15 +21,15 @@ body{
 
 
 @keyframes marquee {
-    0% {
-      margin-left: 100%;
-      transform: translateX(0%);
-    }
-    100% {
-      margin-left: 0;
-      transform: translateX(-100%);
-    }
+  0% {
+    margin-left: 100%;
+    transform: translateX(0%);
   }
+  100% {
+    margin-left: 0;
+    transform: translateX(-100%);
+  }
+}
   
   .section {
     overflow: hidden;
@@ -59,5 +59,191 @@ body{
   
 
   div.status{
-      border:2px solid green;
+      border-left:10px solid #1BA657;
+      border-top:10px solid #1BA657;
   }
+div.attributes{
+  border-bottom:10px solid #1BA657;
+      border-right:10px solid #1BA657;
+}
+
+  div.overview h2{
+    /* background-color:#07592B; */
+    font-family: "Allerta Stencil", Sans-serif;
+    /* font-family: 'Tangerine';
+    font-size: 7vw; */
+  }
+
+
+
+
+
+
+
+
+  div.heartrate{
+    border-radius:100%;
+    background-color:#2E3740;
+    color:white;
+  }
+
+
+
+
+
+.number{
+  font-size:8vw;
+ 
+}
+
+div.icondiv{
+  
+}
+  
+.hearticon {
+
+ 
+  position: absolute;
+  color: #e00;
+  top:8%;
+  left:60%;
+	animation: beat .4s infinite alternate;
+  transform-origin: center;
+ 
+}
+
+/* Heart beat animation */
+@keyframes beat{
+	to { font-size:80px;
+   }
+}
+/*
+ we are using prefix free for this example
+
+for prefixed code it would look like this
+*/
+
+/*
+
+.hearticon {
+	font-size: 50px;
+	color: #e00;
+
+	-webkit-animation: beat .25s infinite alternate;
+	-moz-animation: beat .25s infinite alternate;
+	-ms-animation: beat .25s infinite alternate;
+	-o-animation: beat .25s infinite alternate;
+	animation: beat .25s infinite alternate;
+
+	-webkit-transform-origin: center;
+	-moz-transform-origin: center;
+	-o-transform-origin: center;
+	-ms-transform-origin: center;
+	transform-origin: center;
+}
+
+
+@keyframes beat {
+ to {
+    -webkit-transform: scale(1.4);
+   	-moz-transform: scale(1.4);
+   	-o-transform: scale(1.4);
+   	-ms-transform: scale(1.4);
+   	transform: scale(1.4);
+ }
+
+}
+
+@-moz-keyframes beat {
+ to {
+   -moz-transform: scale(1.4);
+   transform: scale(1.4);
+ }
+
+}
+
+@-webkit-keyframes beat {
+ to {
+   -webkit-transform: scale(1.4);
+   transform: scale(1.4);
+ }
+
+}
+
+@-ms-keyframes beat {
+ to {
+   -ms-transform: scale(1.4);
+   transform: scale(1.4);
+ }
+
+}
+
+@-o-keyframes beat {
+ to {
+   -o-transform: scale(1.4);
+   transform: scale(1.4);
+ }
+
+} 
+*/
+
+
+
+button.helpbtn{
+	background-color:#20FE0D;
+  color:white;
+  box-shadow: none;
+  border:none;
+  height:50px;
+
+}
+
+
+button.helpbtn:hover{
+  background-color:#0BE63B;
+	color:white;
+
+}
+
+
+button.helpbtn:focus{
+
+  color:#4DFFA6;
+  border:none;
+  box-shadow: none;
+  }
+  
+
+
+
+  div .company_logo{
+    border-radius: 100%;
+    background-color:white;
+    color:#003D1F;
+    width:110px;
+    border-left:5px outset #adcca1;
+    border-right:5px inset #adcca1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 16px 20px 0 rgba(0, 0, 0, 0.19);
+
+    
+   
+
+    
+  }
+
+
+
+
+
+
+
+
+  .accordion .card-header:after {
+    font-family: 'FontAwesome';  
+    content: "\f068";
+    float: right; 
+}
+.accordion .card-header.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f067"; 
+}
