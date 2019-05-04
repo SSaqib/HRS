@@ -6,40 +6,84 @@
                 $this->load->database();
         }
 
-        public function addGoal(){
+        public function addGoal($username,$subject,$description,$completed){
 
             $data = array(
-                'username' => $this->input->post('username'),
-                'description' => $this->input->post('description'),
-                'completed' => $this->input->post('completed'),
+                'username' => $username,
+                'subject'=>$subject,
+                'description' => $description,
+                'completed' => $completed,
             );
 
-            $this->db->insert('goal', $data);
-            return ($this->db->affected_rows() != 1) ? false : true;
+            try{
+                    $query = $this->db->get_where('goal', array(        //checking if goal exists
+                        'username' => $username,
+                        'subject'=>$subject,
+                    ));
+
+                    $count = $query->num_rows(); 
+
+                    if($count)
+                    {
+                         return false;
+                    }
+                    else
+                    {
+                        $this->db->insert('goal', $data);
+                        return ($this->db->affected_rows() != 1) ? false : true;
+                
+                 }
+            
+            }
+            catch(Exception $e)
+            {
+                return false;
+            }
+
         }
 
-        public function deleteGoal(){
-            $username = $this->input->input_stream('username');
-            $this->db->where('username', $username);
-            $this->db->delete('goal');
+        public function deleteGoal($username,$subject){
 
-            return ($this->db->affected_rows() == 0) ? false : true;
+
+                    $query = $this->db->get_where('goal', array(        //checking if goal exists
+                        'username' => $username,
+                        'subject'=>$subject,
+                    ));
+
+                    $count = $query->num_rows(); 
+
+                    if($count)
+                    {
+                         $this->db->where('username', $username);
+                    $this->db->where('subject', $subject);
+                    $this->db->delete('goal');
+
+                    return ($this->db->affected_rows() == 0) ? false : true;
+                    }
+                    else
+                    {
+                    return false;
+                
+                 }
+           
         }
 
-        public function getGoals(){
-            $username = $this->input->post('username');
+        public function getGoals($username){
+            
 
             try{
-                $this->db->select('description, time');
+                $this->db->select('subject,description,completed');
                 $this->db->from('goal');
                 $this->db->where('username', $username);
+                
                 $query = $this->db->get();
+
             }
             catch(Exception $e){
                 return false;
             }
 
-            return ($query->num_rows() != 0) ? true : false;
+            return ($query->num_rows() != 0) ? $query->result() : false;
         }
     }
 ?>

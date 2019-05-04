@@ -32,7 +32,7 @@
 						'mmsg' => 'user registered successfully',
 						'true' => 'true',
 						'username'=> $username,
-						'status_code' => '102',
+						'success_code' => '102',
 						
 				));
 			}
@@ -41,7 +41,7 @@
 					
 						'msg' => 'Error while registering',
 						'status' => 'false',
-						'status_code' => '103',
+						'error_code' => '103',
 
 					
 				));
@@ -77,6 +77,199 @@
 		    //redirect('user/login');
 				}
 		}
+
+
+			//GOALS-------------------------------------------------------------
+
+
+		public function addGoal(){ 
+			
+			$username = $this->input->post('username');
+			$subject = $this->input->post('subject');
+            $description = $this->input->post('description');
+            $completed = $this->input->post('completed');
+                
+            $this->load->model('Goal_Model');
+			if($this->Goal_Model->addGoal($username,$subject,$description,$completed)){
+				echo json_encode(array(
+					
+						'msg' => 'New goal added successfully',
+						'success_code' => '200',
+					
+				));
+			}
+			else{
+				echo json_encode(array(
+						'msg' => 'Could not add goal',
+						'error_code' => '101',
+					
+				));
+			}
+		}
+		public function removeGoal(){
+			$username = $this->input->post('username');
+            $subject = $this->input->post('subject');
+			$this->load->model('Goal_Model');
+
+			if($this->Goal_Model->deleteGoal($username,$subject)){
+				echo json_encode(array(
+					
+						'msg' => 'Goal removed',
+						'succes_code' => '200',
+					
+				));
+			}
+			else{
+				echo json_encode(array(
+					
+						'msg' => 'Could not remove goal',
+						'error_code' => '100',
+					
+				));
+			}
+		}
+		public function getGoals(){
+
+			$username=$this->input->post('username');
+			$this->load->model('Goal_Model');
+
+			if($this->Goal_Model->getGoals($username)){
+				echo json_encode($this->Goal_Model->getGoals($username));
+			}
+			else{
+				echo json_encode(array(
+					
+						'msg' => 'no added goals',
+						'error-code' => '105',
+					
+				));
+			}
+		}
+
+
+		//Reminders-----------------------------------------------------------------
+
+
+
+			public function addReminder(){
+				if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+
+
+	    		// The request is using the POST method
+					echo json_encode(array(
+						'message' => 'reminder failed to add , bad method',
+							'error code' => '100',
+						)
+					);
+					return;
+
+				}
+
+				$username = $this->input->post('username');
+				$subject = $this->input->post('subject');
+				$time=$this->input->post('time');
+				$this->load->model('Reminder_Model');
+				if($this->Reminder_Model->userExists($username))
+				{
+					if($this->Reminder_Model->reminder_insert($username, $subject, $time) ) {
+					
+					//success message
+					echo json_encode(array(
+						'message' => 'reminder added',
+							'code' => '200',
+						)
+					);
+				}
+				//error message
+				else {
+					echo json_encode(array(
+						'message' => 'reminder failed to add',
+							'error code' => '100',
+						)
+					);
+		    
+				}
+				}
+				else
+				{
+					echo json_encode(array(
+						'message' => 'authentication problem',
+							'error code' => '101',
+						)
+					);
+					return;
+
+				}
+				
+		}
+
+		public function deleteReminder()
+			{	
+				//if ($_SERVER['REQUEST_METHOD'] !== 'DELETE') {
+
+	     // The request is using the POST method
+					//echo json_encode(array(
+					//	'msg' => 'reminder not deleted, not suitable method',
+					//		'error_code' => '100',
+					//	)
+				//	);
+					//return;
+
+				//}
+				$username = $this->input->post('username');
+				$subject = $this->input->post('subject');
+				$time=$this->input->post('time');
+				$this->load->model('Reminder_Model');
+
+				if(($this->Reminder_Model->reminder_delete($username, $subject, $time))) {
+					
+					//success message
+					echo json_encode(array(
+						'msg' => 'reminder deleted',
+							'success_code' => '200',
+						)
+					);
+				}
+				//error message
+				else {
+					echo json_encode(array(
+						'msg' => 'reminder not deleted',
+							'error_code' => '101',
+						)
+					);
+		    //redirect('user/login');
+				}
+			}
+	
+		public function showReminders()
+			{	
+				if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+					echo json_encode(array(
+						'message' => 'BAD METHOD',
+							'error code' => '100',
+						)
+					);
+
+				}
+				$username = $this->input->post('username');
+				$this->load->model('Reminder_Model');
+				
+				$result = $this->Reminder_Model->reminder_show($username);
+					//success message
+				 if($result){
+		            echo json_encode($result);
+		        } 
+		        else{
+		        	echo json_encode(array(
+						'message' => 'no reminder found',
+							'code' => '200',
+						)
+					);
+		           
+		        }
+					
+			}
+
 	}
 
 ?>
