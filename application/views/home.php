@@ -73,7 +73,7 @@
                                   <form action="<?php echo base_url() . "User/signUp2"; ?>" method="POST">
                                       <div class="form-group">
                                       
-                                          <input type="text" placeholder="username" class="form-control" name="email">
+                                          <input type="text" placeholder="username" class="form-control" name="username">
                                         </div>
                                       <div class="form-group">
                                       
@@ -102,12 +102,11 @@
                               <form  action="<?php echo base_url() . "User/login2"; ?>" method="POST">
                                   
                                 <div class="form-group">
-                                    <input type="email" placeholder="email" class="form-control" id="email">
+                                    <input type="text" placeholder="username" class="form-control" name="username">
                                   </div>
                                   <div class="form-group">
-                                    <input type="password" placeholder="password" class="form-control" id="pwd">
+                                    <input type="password" placeholder="password" class="form-control" name="password">
                                   </div>
-
                                   <div class="form-group form-check white">
                                       <label class="form-check-label">
                                         <input class="form-check-input white" type="checkbox"> Remember me

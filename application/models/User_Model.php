@@ -21,8 +21,19 @@
         }
 
         public function createUser($username,$password,$email){
+            $query = $this->db->get_where('user', array(        //checking if goal exists
+                        'email'=>$email
+                    ));
 
-            if(!($this->userExists($username))){
+                    $count = $query->num_rows(); 
+
+                    if($count)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        if(!($this->userExists($username))){
                 $data = array(
                     'username' => $username,
                     'password' => $password,
@@ -31,6 +42,9 @@
                 );
                 $this->db->insert('User', $data);
                 return true;
+                    }
+                    
+           
             }
             
             return false;

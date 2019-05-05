@@ -77,6 +77,7 @@
 						'success_code' => '102',
 						
 				));
+				redirect('User/login');
 			}
 			else{
 				echo json_encode(array(
@@ -87,6 +88,7 @@
 
 					
 				));
+				redirect('User/signup');
 			}
 		}
 
@@ -106,6 +108,7 @@
 							'status_code' => '101',
 						
 					));
+					redirect('User/profile');
 				}
 				//error message
 				else {
@@ -116,6 +119,7 @@
 							'status_code' => '102',
 						
 					));
+						redirect('User/login');
 		    //redirect('user/login');
 				}
 		}
