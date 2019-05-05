@@ -5,11 +5,12 @@
 
 		public function __construct() {
 			parent::__construct();
-	    //$this->load->library('session');
+	    $this->load->library('session');
 		}
 
 		public function home()
 		{
+			
 			$this->load->view('home');
 		}
 
@@ -25,22 +26,37 @@
 
 		public function profile()
 		{
+			if(!$this->session->userdata('logged_in')){
+   			 redirect('User/login');
+ 			 }
 			$this->load->view('user_home');
 		}
 
 		public function view_profile()
 		{
+			if(!$this->session->userdata('logged_in')){
+   			 redirect('User/login');
+ 			 }
+
 			$this->load->view('profile');
 		}
 
 		public function edit_profile()
 		{
+			if(!$this->session->userdata('logged_in')){
+   			 redirect('User/login');
+ 			 }
+
 			$this->load->view('edit_profile');
 		}
 
 
 		public function reminder()
 		{
+			if(!$this->session->userdata('logged_in')){
+   			 redirect('User/login');
+ 			 }
+
 			$this->load->view('reminders');
 		}
 
@@ -115,6 +131,14 @@
 							'status_code' => '101',
 						
 					));
+					$user_data = array(
+				      'idname' => $username,
+				   
+				      'logged_in' => true
+				    );
+
+
+				    $this->session->set_userdata($user_data);
 					redirect('User/profile');
 				}
 				//error message
@@ -126,6 +150,7 @@
 							'status_code' => '102',
 						
 					));
+					$this->session->set_flashdata('login_failed', 'Login is invalid');
 						redirect('User/login');
 		    //redirect('user/login');
 				}
@@ -221,8 +246,11 @@
 
 				// }
 
-				//$username = $this->input->post('username');
-				$username='najam';
+				$username = $this->input->post('username');
+			if($username==null)
+			{
+				$username =  $this->session->userdata('idname');
+			}
 				$subject = $this->input->post('subject');
 				$time=$this->input->post('time');
 				$this->load->model('Reminder_Model');
@@ -275,13 +303,16 @@
 					//return;
 
 				//}
-				//$username = $this->input->post('username');
-				$username='najam';
+				$username = $this->input->post('username');
+			if($username==null)
+			{
+		$username =  $this->session->userdata('idname');
+			}
 				$subject = $this->input->post('subject');
 			//	$time=$this->input->post('time');
 				$this->load->model('Reminder_Model');
 
-				if(($this->Reminder_Model->reminder_delete($username, $subject, $time))) {
+				if(($this->Reminder_Model->reminder_delete($username, $subject))) {
 					
 					//success message
 					echo json_encode(array(
@@ -311,8 +342,11 @@
 					);
 
 				} */
-			//	$username = $this->input->post('username');
-			$username = "najam";
+			$username = $this->input->post('username');
+			if($username==null)
+			{
+			$username =  $this->session->userdata('idname');
+			}
 				$this->load->model('Reminder_Model');
 			
 				$result = $this->Reminder_Model->reminder_show($username);

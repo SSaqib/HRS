@@ -120,7 +120,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
   
     <div class="col-md-8 my-4">
                 <div class="container"><a class="btn btn-primary m-2">Show Goals</a>    
-        <a href="<?php echo base_url() . "User/create_reminder"; ?>"  class="btn btn-success m-2">Add goals</a></div>
+        <a href="<?php echo base_url() . "User/create_goal"; ?>"  class="btn btn-success m-2">Add goals</a></div>
         <div class="text-center"><h1>Your Goals</h1></div>
             <div class="inner_profile container m-4" id="goal_appender">
                
@@ -201,13 +201,13 @@ function loadGoals(allGoals) {
 
 
 allGoals.forEach(function(reminder){
-      postHtml = ' <div id="myreminder'+goal.Username+'" class="container" >\
+      postHtml = ' <div id="myreminder'+goal.username+'" class="container" >\
                   <br/>\
                   <hr/>\
-                    <p id="subject">Subject: &emsp;&emsp; <span class="mysub">'+goal.Subject+'</span></p>\
+                    <p id="subject">Subject: &emsp;&emsp; <span class="mysub">'+goal.subject+'</span></p>\
                 \
-                    <p>Time:  &emsp;&emsp; <span class="mysub">'+goal.Description+'</span></p>\
-                          <div class="text-right"><a id="'+goal.Completed+'" class="btn btn-danger deletereminder">Delete reminder</a></div>\
+                    <p>Time:  &emsp;&emsp; <span class="mysub">'+goal.description+'</span></p>\
+                          <div class="text-right"><a id="'+goal.completed+'" class="btn btn-danger deletereminder">Delete reminder</a></div>\
                   </div>\
                         '
       $("#goal_appender").append(postHtml);

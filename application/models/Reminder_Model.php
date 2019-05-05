@@ -35,12 +35,12 @@
                      $query = $this->db->get_where('reminder', array(        //checking if goal exists
                         'username' => $username,
                         'subject'=>$subject,
-                        'time'=>$time,
+                        
                     ));
 
                     $count = $query->num_rows(); 
 
-                    if($count)
+                    if($count==1)
                     {
                         return false;
                     }
@@ -58,18 +58,18 @@
                 }                
         }
 
-        public function reminder_delete($username, $subject,$time) {
+        public function reminder_delete($username, $subject) {
                 
                 //$query = "SELECT * FROM user WHERE username = ? AND password = ?";
                 //$query = $this->db->query($query, array($username, $password));
                 //$result = $query->row();
-                $array = array('Username' => $username, 'Subject' => $subject, 'Time' => $time);
+                $array = array('Username' => $username, 'Subject' => $subject);
                 try{
                
                         $query = $this->db->get_where('Reminder', array(        //checking if reminder  exists
                         'username' => $username,
                         'subject'=>$subject,
-                        'time'=>$time
+                       
                     ));
 
                     $count = $query->num_rows(); 
