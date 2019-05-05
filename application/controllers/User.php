@@ -137,7 +137,8 @@
 
 		public function addGoal(){ 
 			
-			$username = $this->input->post('username');
+			// $username=$this->input->post('username');
+			$username = "najam";
 			$subject = $this->input->post('subject');
             $description = $this->input->post('description');
             $completed = $this->input->post('completed');
@@ -160,7 +161,8 @@
 			}
 		}
 		public function removeGoal(){
-			$username = $this->input->post('username');
+			// $username=$this->input->post('username');
+			$username = "najam";
             $subject = $this->input->post('subject');
 			$this->load->model('Goal_Model');
 
@@ -183,7 +185,8 @@
 		}
 		public function getGoals(){
 
-			$username=$this->input->post('username');
+			// $username=$this->input->post('username');
+			$username = "najam";
 			$this->load->model('Goal_Model');
 
 			if($this->Goal_Model->getGoals($username)){

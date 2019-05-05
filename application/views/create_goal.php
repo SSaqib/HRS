@@ -129,13 +129,13 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
                     
     <div class="inner_profile container m-4">
   
-        <form class="" action="<?php echo base_url() . "User/addReminder"; ?>" method="POST">
+        <form class="" action="<?php echo base_url() . "User/addGoal"; ?>" method="POST">
               <br/>
-              <h3 class="myheadings">Create a New Reminder  </h3> <hr/>
+              <h3 class="myheadings">Create a New Goal  </h3> <hr/>
               <p>Subject : &emsp;&emsp; </label>  <input required  type="text" class="form-control" name="subject" placeholder=""></p>    
-              <p>Time : <input type="datetime-local" name="time"> </p>  
+              <p>Description : <input type="text" name="time"> </p>  
               <br/>
-              <button type="submit" class="btn btn-success  pull-right">Add Reminder</button>
+              <button type="submit" class="btn btn-success  pull-right">Add Goal</button>
               </form>
               
           </div>

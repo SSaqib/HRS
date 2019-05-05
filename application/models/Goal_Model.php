@@ -83,7 +83,7 @@
                 return false;
             }
 
-            return ($query->num_rows() != 0) ? $query->result() : false;
+            return ($query->num_rows() > 0) ? $query->result_array() : false;
         }
     }
 ?>

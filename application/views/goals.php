@@ -119,10 +119,10 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
     <div class="col-md-2"></div>
   
     <div class="col-md-8 my-4">
-                <div class="container"><a class="btn btn-primary m-2">Show reminders</a>    
-        <a href="<?php echo base_url() . "User/create_reminder"; ?>"  class="btn btn-success m-2">Add reminder</a></div>
-        <div class="text-center"><h1>Your Reminders</h1></div>
-            <div class="inner_profile container m-4" id="reminder_appender">
+                <div class="container"><a class="btn btn-primary m-2">Show Goals</a>    
+        <a href="<?php echo base_url() . "User/create_reminder"; ?>"  class="btn btn-success m-2">Add goals</a></div>
+        <div class="text-center"><h1>Your Goals</h1></div>
+            <div class="inner_profile container m-4" id="goal_appender">
                
                  
             
@@ -160,7 +160,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
   
   
   $.ajax({
-          url:'<?php echo base_url() . "User/showReminders"; ?>',
+          url:'<?php echo base_url() . "User/getGoals"; ?>',
           method: 'POST',
           data: {},
           success: function(response){
@@ -168,8 +168,8 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
               //alert('You have successfully send the friend request');
               //alert(response);
               //$("#friendsappender").empty();  //clearing previous results
-              var allreminders = JSON.parse(response);
-              loadreminders(allreminders);
+              var allGoals = JSON.parse(response);
+              loadGoals(allGoals);
             
               
  } }); 
@@ -177,13 +177,13 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 
 
 
-  $(".deletereminder").click(function() {
+  /*$(".deleteGoal").click(function() {
  
-        var reminder_id= jQuery(this).attr('id');
-        var sub=$("#subject"+reminder_id).text()
+        var goal_id= jQuery(this).attr('id');
+        var sub=$("#subject"+goal_id).text()
        // console.log(fr_id);
          $.ajax({
-          url:'<?php echo base_url() . "User/deleteReminder"; ?>',
+          url:'<?php echo base_url() . "User/deleteGoal"; ?>',
           method: 'post',
           data: {reminder_id: reminder_id,subject:sub},
           success: function(response){
@@ -192,25 +192,25 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
               $("#myreminder"+reminder_id).hide(2000);
  } });   
            
-});
+});*/
   
 
 
 
-function loadreminders(allreminders) {
+function loadGoals(allGoals) {
 
 
-allreminders.forEach(function(reminder){
-      postHtml = ' <div id="myreminder'+reminder.id+'" class="container" >\
+allGoals.forEach(function(reminder){
+      postHtml = ' <div id="myreminder'+goal.Username+'" class="container" >\
                   <br/>\
                   <hr/>\
-                    <p id="subject">Subject: &emsp;&emsp; <span class="mysub">'+reminder.Subject+'</span></p>\
+                    <p id="subject">Subject: &emsp;&emsp; <span class="mysub">'+goal.Subject+'</span></p>\
                 \
-                    <p>Time:  &emsp;&emsp; <span class="mysub">'+reminder.Time+'</span></p>\
-                          <div class="text-right"><a id="'+reminder.id+'" class="btn btn-danger deletereminder">Delete reminder</a></div>\
+                    <p>Time:  &emsp;&emsp; <span class="mysub">'+goal.Description+'</span></p>\
+                          <div class="text-right"><a id="'+goal.Completed+'" class="btn btn-danger deletereminder">Delete reminder</a></div>\
                   </div>\
                         '
-      $("#reminder_appender").append(postHtml);
+      $("#goal_appender").append(postHtml);
 });
 
 }
