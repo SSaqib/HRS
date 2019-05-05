@@ -18,7 +18,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 
 
    <!--  <link rel="stylesheet" href="home_css.css"> -->
-    <link rel="stylesheet" href="user.css">
+   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/user.css">
 
 
    
@@ -133,88 +133,27 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 
     <div class="col-sm-8 my-4">
                     
-    
+    <div class="inner_profile container m-4">
   
-        <form class="" action="" method="POST">
+        <form class="" action="<?php echo base_url() . "User/getreminderdata"; ?>" method="POST">
       
       
-        <div class="inner_profile container m-4">
-                  <form class="">
+        
+                  
              
               <br/>
-              <h3 class="myheadings">Personal Information  </h3> <hr/>
-    
-              <p>Full Name : &emsp;&emsp; </label>  <input required  type="text" class="form-control" name="fname" placeholder=""></p>
-             
-              
-             
-              <p>Gender : &emsp;&emsp; 
-               
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option>Male</option>
-                  <option>Female</option>
-                  <option>Others</option>
-                
-                </select>
-             </p>
-    
-              <p>Password : &emsp;&emsp;  <input required  type="password" class="form-control" name="pwd" placeholder="Account Password"></p>
-    
-              <p>Date of Birth : &emsp;&emsp;  <input required  type="date" class="form-control" name="dob" placeholder=""></p>
-    
-              <p>Country : &emsp;&emsp; <input type="text" required  class="form-control" name="country" placeholder=""></p>
-    
-              <p>City : &emsp;&emsp;  <input type="text" required  class="form-control" name="city" placeholder=""></p>
-    
-              <p>Email : &emsp;&emsp;  <input type="email" readonly class="form-control" id="fn" placeholder="bhola_g@gmail.com"></p>
+              <h3 class="myheadings">Create a New Reminder  </h3> <hr/>
+
+
+              <p>Subject : &emsp;&emsp; </label>  <input required  type="text" class="form-control" name="fname" placeholder=""></p>
              
     
-              <br/>
-             
-    
-    
-           
-    
-              
-             
-            
-    
-              <!-- <p>Contact number :  &emsp;&emsp;  <input type="text" class="form-control" id="fn" placeholder="Contact Number"></p> -->
-          
-    
-              <!-- <p>Personal Website :  &emsp;&emsp;  <input type="text" class="form-control" id="fn" placeholder="Personal Webiste/Blog/Portfolio (if any)"></p> -->
-              
+              <p>Time : <input type="datetime-local" name="remindertime"> </p>
+     
               <br/>
     
     
-              <h3 class="myheadings">Physical Information  </h3> <hr/>
-    
-              
-              <p>Age : &emsp;&emsp;  <input type="number" required  class="form-control" name="city" placeholder=""></p>
-            
-              <p>Weight(in kgs) : &emsp;&emsp;  <input type="number" required  class="form-control" name="city" placeholder=""></p>
-             
-          
-    
-              <p>Blood Group :  &emsp;&emsp;  
-                  <select class="form-control" required  id="Degree_enrolled" name="enrolled">
-                      <option>A-</option>
-                      <option>A+</option>
-                      <option>B-</option>
-                      <option>B+</option>
-                      <option>AB-</option>
-                      <option>AB+</option>
-                      <option>O</option>
-                    </select></p>
-    
-                    
-             
-              <br/>
-             
-             
-                    
-              <a href="" class="btn btn-danger pull-left">Cancel</a>
-              <button type="submit" class="btn btn-success  pull-right">Save Changes</button>
+              <button type="submit" class="btn btn-success  pull-right">Add Reminder</button>
            
               </form>
               

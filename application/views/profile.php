@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="js/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,10 +15,8 @@
     <link rel="stylesheet"
 href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 
-
-
-    <link rel="stylesheet" href="home_css.css">
-    <link rel="stylesheet" href="user.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/user.css">
+    
 
 
    
@@ -125,77 +121,57 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
     <div class="col-md-2"></div>
   
     <div class="col-md-8 my-4">
-                <div class="text-right"><a class="btn btn-primary m-2">show reminders</a></div>     
-        <div class="text-right"><a class="btn btn-primary m-2">add reminder</a></div>
-        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" style="background-color: grey">
-          <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" style="background-color: white">
-            <div class="inner_profile container m-4">
-              
-              <br/>
-              <h3 class="myheadings">Reminders </h3>
-              <hr/>
-              
-              <p>Subject: &emsp;&emsp; <span class="mysub">Workout</span></p>
-              
-              
-              <p>Time:  &emsp;&emsp; <span class="mysub">10:00 pm</span></p>
-				<div class="text-right"><a class="btn btn-primary m-2">delete reminder</a></div>
-              
-              
-        
-              <br/>
-              
-              
-              
-             
-              
-              <!--  <p>Contact number :  &emsp;&emsp; <span class="mysub">0333333333</span></p>
+                    
+        <div class="text-right">
+      
+          <a href="<?php echo base_url() . "User/edit_profile"; ?>" class="btn btn-primary m-2">Edit Profile</a>
+      </div>
+    
+
+
+        <div class="inner_profile container m-4">
+           
+            <br/>
+            <h3 class="myheadings">Personal Information  </h3> <hr/>
+
+            <p>Full Name : &emsp;&emsp; <span class="mysub">Bhola Pehlawan</span></p>
+           
+            
+            <p>Gender :  &emsp;&emsp; <span class="mysub">Male</span></p>
+          
+
+            <p>Date of Birth : &emsp;&emsp; <span class="mysub">09-July-1993</span></p>
+
+            <p>Country : &emsp;&emsp; <span class="mysub">Pakistan</span></p>
+
+            <p>City : &emsp;&emsp; <span class="mysub">Lahore</span></p>
+
+            <p>Email : &emsp;&emsp; <span class="mysub">bhola_g@gmail.com</span></p>
+           
+            <br/>
+           
+
+
+            <h3 class="myheadings">Physical Information </h3> <hr/>
+
+            
+            <p>Weight : &emsp;&emsp; <span class="mysub">92kgs/202.825 lbs</span></p>
+            <p>Height : &emsp;&emsp; <span class="mysub">5 foot 2 inches</span></p>
+            <p>Age : &emsp;&emsp; <span class="mysub">26</span></p>
+            <p>Blood Group : &emsp;&emsp; <span class="mysub">AB+</span></p>
+          
+
+           <!--  <p>Contact number :  &emsp;&emsp; <span class="mysub">0333333333</span></p>
         
 
             <p>Personal Website :  &emsp;&emsp; <span class="mysub">www.helloworld.com</span></p> -->
-              
-              <br/>
-              
-              
-              
-              
-              
-              </div>
-			  <div class="inner_profile container m-4">
-              
-              <br/>
-              <h3 class="myheadings">Reminders</h3>
-              <hr/>
-              
-              <p>Subject: &emsp;&emsp; <span class="mysub">Workout</span></p>
-              
-              
-              <p>Time:  &emsp;&emsp; <span class="mysub">10:00 pm</span></p>
-				<div class="text-right"><a class="btn btn-primary m-2">delete reminder</a></div>
-              
-              
-        
-              <br/>
-              
-              
-              
-             
-              
-              <!--  <p>Contact number :  &emsp;&emsp; <span class="mysub">0333333333</span></p>
-        
+            
+            <br/>
 
-            <p>Personal Website :  &emsp;&emsp; <span class="mysub">www.helloworld.com</span></p> -->
-              
-              <br/>
-              
-              
-              
-              
-              
-              </div>
-			  
-			  
-            </div>
+
+           
+          
+            
         </div>
 
 
@@ -207,6 +183,8 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
     <div class="col-md-2"></div>
 
   </div>
+
+ 
 </body>
 
 

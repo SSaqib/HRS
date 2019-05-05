@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="Footer-with-button-logo.css">
 
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/user.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/home_css.css">
 
     <link rel="stylesheet" href="cssfiles/Footer-with-button-logo.css">
 	<link rel="stylesheet" href="home_css.css">
@@ -63,26 +65,26 @@
                   
                     <div class="mr-4 mt-4 outerdiv pt-4 col-md-8">
                         <div class="ml-0 pl-0 choices text-md-center">
-                            <a class="mybutton btn text-uppercase btn-lg my-4 ml-4 p-4 mr-0 pr-0" id="btnlogin" href="#" role="button">Login</a>
+                            <a class="mybutton btn text-uppercase btn-lg my-4 ml-4 p-4 mr-0 pr-0" id="btnlogin" href="<?php echo base_url() . "user/login"; ?>" role="button">Login</a>
                             <div class="" id="verticalLine2" ></div>
-                            <a class=" mybutton btn text-uppercase btn-lg p-4  ml-0" id="btnsignup" href="#" role="button">Signup</a>
+                            <a class=" mybutton btn text-uppercase btn-lg p-4  ml-0" id="btnsignup" href="<?php echo base_url() . "user/signup"; ?>" role="button">Signup</a>
                          </div>
                          <div id="signup" class="my-4 ">
-                                  <form action="/action_page.php">
+                                  <form action="<?php echo base_url() . "User/signUp2"; ?>" method="POST">
                                       <div class="form-group">
                                       
-                                          <input type="text" placeholder="username" class="form-control" id="email">
+                                          <input type="text" placeholder="username" class="form-control" name="email">
                                         </div>
                                       <div class="form-group">
                                       
-                                        <input type="email" placeholder="email" class="form-control" id="email">
+                                        <input type="email" placeholder="email" class="form-control" name="email">
                                       </div>
                                       <div class="form-group">
-                                        <input type="password" placeholder="password" class="form-control" id="pwd">
+                                        <input type="password" placeholder="password" class="form-control" name="password">
                                       </div>
 
                                       <div class="form-group">
-                                          <input type="password" placeholder="confirm password" class="form-control" id="pwd">
+                                          <input type="password" placeholder="confirm password" class="form-control" name="pwd">
                                         </div>
 
                                       
@@ -97,7 +99,7 @@
 
 
                            <div id="login" class="my-4 ">
-                              <form action="/action_page.php">
+                              <form  action="<?php echo base_url() . "User/login2"; ?>" method="POST">
                                   
                                 <div class="form-group">
                                     <input type="email" placeholder="email" class="form-control" id="email">
@@ -149,10 +151,9 @@
  $(document).ready(function(){
   $("#signup").hide();
 
-
+/* 
   $("#btnlogin").click(function(){
- /*    $("#signup").fadeOut(1000);
-    $("#login").fadeIn(5000); */
+
 
     $("#signup").hide();
     $("#login").show();
@@ -160,14 +161,26 @@
   });
 
   $("#btnsignup").click(function(){
-   /*  $("#login").fadeOut(1000);
-    $("#signup").fadeIn(5000); */
+  
 
     $("#login").hide();
     $("#signup").show();
    
+  }); */
+
+  jQuery(document).ready(function() {
+      var url = window.location.href.toString();
+      var splitted_url = url.split("/");
+      var id = splitted_url[splitted_url.length - 1];
+      if(id == "login") {
+        jQuery('#login').css("display", "block");
+        jQuery('#signup').css("display", "none");
+      }
+      else if (id == "signup") {
+        jQuery('#signup').css("display", "block");
+        jQuery('#login').css("display", "none");
+      } 
+      
   });
-
-
 });
 </script> 

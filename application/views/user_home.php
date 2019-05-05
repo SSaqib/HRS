@@ -15,10 +15,7 @@
     <link rel="stylesheet"
 href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 
-
-
-    <link rel="stylesheet" href="home_css.css">
-    <link rel="stylesheet" href="user.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/user.css">
 
 
    
@@ -65,7 +62,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
       </li>
     
        <li class="nav-item">
-           <a href="#" class="nav-link px-2" onclick="loginbutton()"> <i class="fa fa-user  mx-1" aria-hidden="true"></i>Profile</a>
+           <a href="<?php echo base_url() . "User/view_profile"; ?>" class="nav-link px-2">  <i class="fa fa-user  mx-1" aria-hidden="true"></i>Profile</a>
          </li>
 
          <li class="nav-item">
@@ -243,7 +240,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
                       <div class="d-inline icondiv p-4">
                       <!-- <span class="hearticon d-inline">&#x2665;</span>BPM<br></div> -->
                       <i class="fa fa-heart fa-4x hearticon"></i><br><h4>BPM</h4></div>
-                      <img src="heartbeat5.png"  style="max-width: 100px;height: auto;">
+                      <img src="<?php echo base_url(); ?>/assets/imgs/heartbeat5.png"  style="max-width: 100px;height: auto;">
                   </div>
               </div>
             </div>

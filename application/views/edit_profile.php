@@ -17,8 +17,8 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 
 
 
-    <link rel="stylesheet" href="home_css.css">
-    <link rel="stylesheet" href="user.css">
+   <!--  <link rel="stylesheet" href="home_css.css"> -->
+   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/user.css">
 
 
    
@@ -76,7 +76,8 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
               <li class="nav-item">
            
                 <a href="#" class="nav-link px-2" onclick="createaccountbutton()"><i class="far fa-question-circle  mx-1"></i>Help</a>
-              </li>    
+              </li>     
+              
 
     
          <li class="nav-item">
@@ -113,6 +114,13 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
         "To enjoy the glow of good health, you must exercise." - Gene Tunney.&emsp;&emsp;&emsp;&emsp;&emsp;
         "Happiness is nothing more than good health and a bad memory." - Albert Schweitzer.&emsp;&emsp;&emsp;&emsp;&emsp;
         "The greatest wealth is health." - Virgil.&emsp;&emsp;&emsp;&emsp;&emsp;
+
+
+
+
+
+
+
         </p>
 
         
@@ -122,59 +130,95 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
     <div class="row">
     <div class="col-md-2"></div>
   
-    <div class="col-md-8 my-4">
+
+    <div class="col-sm-8 my-4">
                     
-        <div class="text-right">
-      
-          <a href="" class="btn btn-primary m-2">Edit Profile</a>
-      </div>
     
-
-
+  
+        <form class="" action="" method="POST">
+      
+      
         <div class="inner_profile container m-4">
+                  <form class="">
+             
+              <br/>
+              <h3 class="myheadings">Personal Information  </h3> <hr/>
+    
+              <p>Full Name : &emsp;&emsp; </label>  <input required  type="text" class="form-control" name="fname" placeholder=""></p>
+             
+              
+             
+              <p>Gender : &emsp;&emsp; 
+               
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Others</option>
+                
+                </select>
+             </p>
+    
+              <p>Password : &emsp;&emsp;  <input required  type="password" class="form-control" name="pwd" placeholder="Account Password"></p>
+    
+              <p>Date of Birth : &emsp;&emsp;  <input required  type="date" class="form-control" name="dob" placeholder=""></p>
+    
+              <p>Country : &emsp;&emsp; <input type="text" required  class="form-control" name="country" placeholder=""></p>
+    
+              <p>City : &emsp;&emsp;  <input type="text" required  class="form-control" name="city" placeholder=""></p>
+    
+              <p>Email : &emsp;&emsp;  <input type="email" readonly class="form-control" id="fn" placeholder="bhola_g@gmail.com"></p>
+             
+    
+              <br/>
+             
+    
+    
            
-            <br/>
-            <h3 class="myheadings">Personal Information  </h3> <hr/>
-
-            <p>Full Name : &emsp;&emsp; <span class="mysub">Bhola Pehlawan</span></p>
-           
+    
+              
+             
             
-            <p>Gender :  &emsp;&emsp; <span class="mysub">Male</span></p>
+    
+              <!-- <p>Contact number :  &emsp;&emsp;  <input type="text" class="form-control" id="fn" placeholder="Contact Number"></p> -->
           
-
-            <p>Date of Birth : &emsp;&emsp; <span class="mysub">09-July-1993</span></p>
-
-            <p>Country : &emsp;&emsp; <span class="mysub">Pakistan</span></p>
-
-            <p>City : &emsp;&emsp; <span class="mysub">Lahore</span></p>
-
-            <p>Email : &emsp;&emsp; <span class="mysub">bhola_g@gmail.com</span></p>
-           
-            <br/>
-           
-
-
-            <h3 class="myheadings">Physical Information </h3> <hr/>
-
+    
+              <!-- <p>Personal Website :  &emsp;&emsp;  <input type="text" class="form-control" id="fn" placeholder="Personal Webiste/Blog/Portfolio (if any)"></p> -->
+              
+              <br/>
+    
+    
+              <h3 class="myheadings">Physical Information  </h3> <hr/>
+    
+              
+              <p>Age : &emsp;&emsp;  <input type="number" required  class="form-control" name="city" placeholder=""></p>
             
-            <p>Weight : &emsp;&emsp; <span class="mysub">92kgs/202.825 lbs</span></p>
-            <p>Height : &emsp;&emsp; <span class="mysub">5 foot 2 inches</span></p>
-            <p>Age : &emsp;&emsp; <span class="mysub">26</span></p>
-            <p>Blood Group : &emsp;&emsp; <span class="mysub">AB+</span></p>
+              <p>Weight(in kgs) : &emsp;&emsp;  <input type="number" required  class="form-control" name="city" placeholder=""></p>
+             
           
-
-           <!--  <p>Contact number :  &emsp;&emsp; <span class="mysub">0333333333</span></p>
-        
-
-            <p>Personal Website :  &emsp;&emsp; <span class="mysub">www.helloworld.com</span></p> -->
-            
-            <br/>
-
-
+    
+              <p>Blood Group :  &emsp;&emsp;  
+                  <select class="form-control" required  id="Degree_enrolled" name="enrolled">
+                      <option>A-</option>
+                      <option>A+</option>
+                      <option>B-</option>
+                      <option>B+</option>
+                      <option>AB-</option>
+                      <option>AB+</option>
+                      <option>O</option>
+                    </select></p>
+    
+                    
+             
+              <br/>
+             
+             
+                    
+              <a href="" class="btn btn-danger pull-left">Cancel</a>
+              <button type="submit" class="btn btn-success  pull-right">Save Changes</button>
            
-          
-            
-        </div>
+              </form>
+              
+          </div>
 
 
         
@@ -204,3 +248,13 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 
 });
 </script> 
+
+
+
+
+
+
+
+
+
+

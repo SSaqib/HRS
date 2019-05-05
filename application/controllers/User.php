@@ -7,7 +7,49 @@
 			parent::__construct();
 	    //$this->load->library('session');
 		}
-		public function signUp(){
+
+		public function home()
+		{
+			$this->load->view('home');
+		}
+
+		public function login()
+		{
+			$this->load->view('home');
+		}
+
+		public function signup()
+		{
+			$this->load->view('home');
+		}
+
+		public function profile()
+		{
+			$this->load->view('user_home');
+		}
+
+		public function view_profile()
+		{
+			$this->load->view('profile');
+		}
+
+		public function edit_profile()
+		{
+			$this->load->view('edit_profile');
+		}
+
+
+		public function reminder()
+		{
+			$this->load->view('reminders');
+		}
+
+		public function create_reminder(){
+			$this->load->view('create_reminder');
+		}
+
+
+		public function signUp2(){
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
             $email = $this->input->post('email');
@@ -48,7 +90,7 @@
 			}
 		}
 
-		public function login()
+		public function login2()
 			{
 				$username = $this->input->post('username');
 				$password = $this->input->post('password');
@@ -218,7 +260,7 @@
 				//}
 				$username = $this->input->post('username');
 				$subject = $this->input->post('subject');
-				$time=$this->input->post('time');
+			//	$time=$this->input->post('time');
 				$this->load->model('Reminder_Model');
 
 				if(($this->Reminder_Model->reminder_delete($username, $subject, $time))) {
@@ -243,17 +285,18 @@
 	
 		public function showReminders()
 			{	
-				if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+				/* if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 					echo json_encode(array(
 						'message' => 'BAD METHOD',
 							'error code' => '100',
 						)
 					);
 
-				}
-				$username = $this->input->post('username');
+				} */
+			//	$username = $this->input->post('username');
+			$username = "najam";
 				$this->load->model('Reminder_Model');
-				
+			
 				$result = $this->Reminder_Model->reminder_show($username);
 					//success message
 				 if($result){
