@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="js/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,8 +17,8 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 
 
 
-    <link rel="stylesheet" href="home_css.css">
-    <link rel="stylesheet" href="user.css">
+   <!--  <link rel="stylesheet" href="home_css.css"> -->
+   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/user.css">
 
 
    
@@ -53,12 +51,6 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
        <li class="nav-item">
          <a class="nav-link active px-2" href="#"><i class="fas fa-home  mx-1"></i>Home</a>
        </li>
-       <!-- <li class="nav-item">
-         <a class="nav-link px-2" href="#">About</a>
-       </li>
-       <li class="nav-item ">
-         <a class="nav-link px-2" href="#">Help</a>
-       </li> -->
        <li class="nav-item">
         <a class="nav-link active px-2" href="#"><i class="fa fa-bell  mx-1" aria-hidden="true"></i>Reminders</a>
       </li>
@@ -78,7 +70,8 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
               <li class="nav-item">
            
                 <a href="#" class="nav-link px-2" onclick="createaccountbutton()"><i class="far fa-question-circle  mx-1"></i>Help</a>
-              </li>    
+              </li>     
+              
 
     
          <li class="nav-item">
@@ -115,6 +108,13 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
         "To enjoy the glow of good health, you must exercise." - Gene Tunney.&emsp;&emsp;&emsp;&emsp;&emsp;
         "Happiness is nothing more than good health and a bad memory." - Albert Schweitzer.&emsp;&emsp;&emsp;&emsp;&emsp;
         "The greatest wealth is health." - Virgil.&emsp;&emsp;&emsp;&emsp;&emsp;
+
+
+
+
+
+
+
         </p>
 
         
@@ -124,51 +124,27 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
     <div class="row">
     <div class="col-md-2"></div>
   
-    <div class="col-md-8 my-4">
-        <div class="text-right"><a class="btn btn-primary m-2">add goal</a></div>            
-        <div class="text-right"><a class="btn btn-primary m-2">show goals</a></div>
-        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" style="background-color: grey">
-          <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" style="background-color: white">
-            <div class="inner_profile container m-4">
-              
+
+    <div class="col-sm-8 my-4">
+                    
+    <div class="inner_profile container m-4">
+  
+        <form class="" action="<?php echo base_url() . "User/addReminder"; ?>" method="POST">
               <br/>
-              <h3 class="myheadings">Goals</h3>
-              <hr/>
-              <p>Description:    <span class="mysub">walk 1000 km</span></p>
-              <p>status:  &emsp;&emsp; <span class="mysub">in progress</span></p>
-              <div class="text-right"><a class="btn btn-primary m-2">delete goal</a></div>
-              
-        
+              <h3 class="myheadings">Create a New Reminder  </h3> <hr/>
+              <p>Subject : &emsp;&emsp; </label>  <input required  type="text" class="form-control" name="subject" placeholder=""></p>    
+              <p>Time : <input type="datetime-local" name="time"> </p>  
               <br/>
+              <button type="submit" class="btn btn-success  pull-right">Add Reminder</button>
+              </form>
               
-              
-              
-             
-              
-              <!--  <p>Contact number :  &emsp;&emsp; <span class="mysub">0333333333</span></p>
-        
-
-            <p>Personal Website :  &emsp;&emsp; <span class="mysub">www.helloworld.com</span></p> -->
-              
-              <br/>
-              
-              
-              
-              
-              
-              </div>
-            </div>
-        </div>
-
-
-        
-
-
-
+          </div>
     </div>
     <div class="col-md-2"></div>
 
   </div>
+
+ 
 </body>
 
 
@@ -186,3 +162,13 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 
 });
 </script> 
+
+
+
+
+
+
+
+
+
+

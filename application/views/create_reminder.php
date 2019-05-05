@@ -51,12 +51,6 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
        <li class="nav-item">
          <a class="nav-link active px-2" href="#"><i class="fas fa-home  mx-1"></i>Home</a>
        </li>
-       <!-- <li class="nav-item">
-         <a class="nav-link px-2" href="#">About</a>
-       </li>
-       <li class="nav-item ">
-         <a class="nav-link px-2" href="#">Help</a>
-       </li> -->
        <li class="nav-item">
         <a class="nav-link active px-2" href="#"><i class="fa fa-bell  mx-1" aria-hidden="true"></i>Reminders</a>
       </li>
@@ -135,35 +129,16 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
                     
     <div class="inner_profile container m-4">
   
-        <form class="" action="<?php echo base_url() . "User/getreminderdata"; ?>" method="POST">
-      
-      
-        
-                  
-             
+        <form class="" action="<?php echo base_url() . "User/addReminder"; ?>" method="POST">
               <br/>
               <h3 class="myheadings">Create a New Reminder  </h3> <hr/>
-
-
-              <p>Subject : &emsp;&emsp; </label>  <input required  type="text" class="form-control" name="fname" placeholder=""></p>
-             
-    
-              <p>Time : <input type="datetime-local" name="remindertime"> </p>
-     
+              <p>Subject : &emsp;&emsp; </label>  <input required  type="text" class="form-control" name="subject" placeholder=""></p>    
+              <p>Time : <input type="datetime-local" name="time"> </p>  
               <br/>
-    
-    
               <button type="submit" class="btn btn-success  pull-right">Add Reminder</button>
-           
               </form>
               
           </div>
-
-
-        
-
-
-
     </div>
     <div class="col-md-2"></div>
 

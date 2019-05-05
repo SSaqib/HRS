@@ -55,10 +55,10 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
          <a class="nav-link px-2" href="#">Help</a>
        </li> -->
        <li class="nav-item">
-        <a class="nav-link active px-2" href="#"><i class="fa fa-bell  mx-1" aria-hidden="true"></i>Reminders</a>
+        <a class="nav-link active px-2" href="<?php echo base_url() . "User/reminder"; ?>"><i class="fa fa-bell  mx-1" aria-hidden="true"></i>Reminders</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active px-2" href="#"><i class="fas fa-bullseye  mx-1"></i>Goals</a>
+        <a class="nav-link active px-2" href="<?php echo base_url() . "User/goals"; ?>"><i class="fas fa-bullseye  mx-1"></i>Goals</a>
       </li>
     
        <li class="nav-item">

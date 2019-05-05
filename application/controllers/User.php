@@ -47,7 +47,14 @@
 		public function create_reminder(){
 			$this->load->view('create_reminder');
 		}
+		public function goals()
+		{
+			$this->load->view('goals');
+		}
 
+		public function create_goal(){
+			$this->load->view('create_goal');
+		}
 
 		public function signUp2(){
 			$username = $this->input->post('username');
@@ -198,20 +205,21 @@
 
 
 			public function addReminder(){
-				if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+				// if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 
-	    		// The request is using the POST method
-					echo json_encode(array(
-						'message' => 'reminder failed to add , bad method',
-							'error code' => '100',
-						)
-					);
-					return;
+	   //  		// The request is using the POST method
+				// 	echo json_encode(array(
+				// 		'message' => 'reminder failed to add , bad method',
+				// 			'error code' => '100',
+				// 		)
+				// 	);
+				// 	return;
 
-				}
+				// }
 
-				$username = $this->input->post('username');
+				//$username = $this->input->post('username');
+				$username='najam';
 				$subject = $this->input->post('subject');
 				$time=$this->input->post('time');
 				$this->load->model('Reminder_Model');
@@ -225,6 +233,7 @@
 							'code' => '200',
 						)
 					);
+					redirect('User/reminder');
 				}
 				//error message
 				else {
@@ -233,7 +242,7 @@
 							'error code' => '100',
 						)
 					);
-		    
+		    		redirect('User/reminder');
 				}
 				}
 				else
@@ -243,6 +252,7 @@
 							'error code' => '101',
 						)
 					);
+					redirect('User/reminder');
 					return;
 
 				}
@@ -262,7 +272,8 @@
 					//return;
 
 				//}
-				$username = $this->input->post('username');
+				//$username = $this->input->post('username');
+				$username='najam';
 				$subject = $this->input->post('subject');
 			//	$time=$this->input->post('time');
 				$this->load->model('Reminder_Model');
