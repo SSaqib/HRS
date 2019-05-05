@@ -49,17 +49,23 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
          <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
      <ul class="navbar-nav ml-auto" >
        <li class="nav-item">
-         <a class="nav-link active px-2" href="#"><i class="fas fa-home  mx-1"></i>Home</a>
+         <a class="nav-link active px-2" href="<?php echo base_url() . "User/profile"; ?>"><i class="fas fa-home  mx-1"></i>Home</a>
        </li>
+       <!-- <li class="nav-item">
+         <a class="nav-link px-2" href="#">About</a>
+       </li>
+       <li class="nav-item ">
+         <a class="nav-link px-2" href="#">Help</a>
+       </li> -->
        <li class="nav-item">
-        <a class="nav-link active px-2" href="#"><i class="fa fa-bell  mx-1" aria-hidden="true"></i>Reminders</a>
+        <a class="nav-link active px-2" href="<?php echo base_url() . "User/reminder"; ?>"><i class="fa fa-bell  mx-1" aria-hidden="true"></i>Reminders</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active px-2" href="#"><i class="fas fa-bullseye  mx-1"></i>Goals</a>
+        <a class="nav-link active px-2" href="<?php echo base_url() . "User/goals"; ?>"><i class="fas fa-bullseye  mx-1"></i>Goals</a>
       </li>
     
        <li class="nav-item">
-           <a href="#" class="nav-link px-2" onclick="loginbutton()"> <i class="fa fa-user  mx-1" aria-hidden="true"></i>Profile</a>
+           <a href="<?php echo base_url() . "User/view_profile"; ?>" class="nav-link px-2">  <i class="fa fa-user  mx-1" aria-hidden="true"></i>Profile</a>
          </li>
 
          <li class="nav-item">
@@ -70,8 +76,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
               <li class="nav-item">
            
                 <a href="#" class="nav-link px-2" onclick="createaccountbutton()"><i class="far fa-question-circle  mx-1"></i>Help</a>
-              </li>     
-              
+              </li>          
 
     
          <li class="nav-item">
@@ -81,6 +86,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
      
      </ul>
          </div>
+    
     
     </nav>
     

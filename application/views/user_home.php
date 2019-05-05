@@ -46,7 +46,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
          <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
      <ul class="navbar-nav ml-auto" >
        <li class="nav-item">
-         <a class="nav-link active px-2" href="#"><i class="fas fa-home  mx-1"></i>Home</a>
+         <a class="nav-link active px-2" href="<?php echo base_url() . "User/profile"; ?>"><i class="fas fa-home  mx-1"></i>Home</a>
        </li>
        <!-- <li class="nav-item">
          <a class="nav-link px-2" href="#">About</a>
