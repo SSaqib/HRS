@@ -18,7 +18,8 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 
 
     <!-- <link rel="stylesheet" href="home_css.css"> -->
-    <link rel="stylesheet" href="user.css">
+  <!--   <link rel="stylesheet" href="user.css"> -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/user.css">
 
 
    
@@ -35,7 +36,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 
 
 <body  class=" ">
-    <nav class="navbar navbar-expand-sm mynav ">
+     <nav class="navbar navbar-expand-sm mynav ">
         <!-- <img src="newlogo3.jpeg" alt="Logo" style="width:130px;height:100%; "> -->
         <h1 class="px-1">HRS</h1>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -49,7 +50,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
          <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
      <ul class="navbar-nav ml-auto" >
        <li class="nav-item">
-         <a class="nav-link active px-2" href="#"><i class="fas fa-home  mx-1"></i>Home</a>
+         <a class="nav-link active px-2" href="<?php echo base_url() . "User/profile"; ?>"><i class="fas fa-home  mx-1"></i>Home</a>
        </li>
        <!-- <li class="nav-item">
          <a class="nav-link px-2" href="#">About</a>
@@ -58,25 +59,25 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
          <a class="nav-link px-2" href="#">Help</a>
        </li> -->
        <li class="nav-item">
-        <a class="nav-link active px-2" href="#"><i class="fa fa-bell  mx-1" aria-hidden="true"></i>Reminders</a>
+        <a class="nav-link active px-2" href="<?php echo base_url() . "User/reminder"; ?>"><i class="fa fa-bell  mx-1" aria-hidden="true"></i>Reminders</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active px-2" href="#"><i class="fas fa-bullseye  mx-1"></i>Goals</a>
+        <a class="nav-link active px-2" href="<?php echo base_url() . "User/goals"; ?>"><i class="fas fa-bullseye  mx-1"></i>Goals</a>
       </li>
     
        <li class="nav-item">
-           <a href="#" class="nav-link px-2" onclick="loginbutton()"> <i class="fa fa-user  mx-1" aria-hidden="true"></i>Profile</a>
+           <a href="<?php echo base_url() . "User/view_profile"; ?>" class="nav-link px-2">  <i class="fa fa-user  mx-1" aria-hidden="true"></i>Profile</a>
          </li>
 
-         <li class="nav-item">
+        <!--  <li class="nav-item">
            
                 <a href="#" class="nav-link px-2" onclick="createaccountbutton()"> <i class="fa fa-comments-o   mx-1" aria-hidden="true"></i>Feedback</a>
-              </li>
+              </li> -->
 
               <li class="nav-item">
            
-                <a href="#" class="nav-link px-2" onclick="createaccountbutton()"><i class="far fa-question-circle  mx-1"></i>Help</a>
-              </li>    
+                <a href="<?php echo base_url() . "User/help"; ?>" class="nav-link px-2" onclick="createaccountbutton()"><i class="far fa-question-circle  mx-1"></i>Help</a>
+              </li>          
 
     
          <li class="nav-item">
@@ -88,6 +89,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
          </div>
     
     </nav>
+    
     
 
 
@@ -162,16 +164,16 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
                     <div class="card mb-0">
                         <div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
                             <a class="card-title">
-                                Quote 1
+                                What is Blood Pressure?
                             </a>
                         </div>
                         <div id="collapseOne" class="card-body collapse" data-parent="#accordion" >
                           <p>Time and health are two precious assets that we don't recognize and appreciate until they have been depleted.</p>
-                          <p> Denis Waitley</p>
+                          <p> Dr. Khan</p>
                         </div>
                         <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                             <a class="card-title">
-                              Quote 2
+                              What is difference between Blood Pressure and Heartbeat?
                             </a>
                         </div>
                         <div id="collapseTwo" class="card-body collapse" data-parent="#accordion" >
@@ -180,7 +182,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
                         </div>
                         <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
                             <a class="card-title">
-                              Quote 3
+                              How HRS does Prediction?
                             </a>
                         </div>
                         <div id="collapseThree" class="collapse" data-parent="#accordion" >

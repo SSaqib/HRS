@@ -68,14 +68,14 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
            <a href="<?php echo base_url() . "User/view_profile"; ?>" class="nav-link px-2">  <i class="fa fa-user  mx-1" aria-hidden="true"></i>Profile</a>
          </li>
 
-         <li class="nav-item">
+       <!--   <li class="nav-item">
            
                 <a href="#" class="nav-link px-2" onclick="createaccountbutton()"> <i class="fa fa-comments-o   mx-1" aria-hidden="true"></i>Feedback</a>
-              </li>
+              </li> -->
 
               <li class="nav-item">
            
-                <a href="#" class="nav-link px-2" onclick="createaccountbutton()"><i class="far fa-question-circle  mx-1"></i>Help</a>
+                <a href="<?php echo base_url() . "User/help"; ?>" class="nav-link px-2" onclick="createaccountbutton()"><i class="far fa-question-circle  mx-1"></i>Help</a>
               </li>          
 
     

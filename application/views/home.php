@@ -73,18 +73,18 @@
                                   <form action="<?php echo base_url() . "User/signUp2"; ?>" method="POST">
                                       <div class="form-group">
                                       
-                                          <input type="text" placeholder="username" class="form-control" name="username">
+                                          <input required type="text" placeholder="username" class="form-control" name="username">
                                         </div>
                                       <div class="form-group">
                                       
-                                        <input type="email" placeholder="email" class="form-control" name="email">
+                                        <input required  type="email" placeholder="email" class="form-control" name="email">
                                       </div>
                                       <div class="form-group">
-                                        <input type="password" placeholder="password" class="form-control" name="password">
+                                        <input required  type="password" placeholder="password" class="form-control" name="password">
                                       </div>
 
                                       <div class="form-group">
-                                          <input type="password" placeholder="confirm password" class="form-control" name="pwd">
+                                          <input required  type="password" placeholder="confirm password" class="form-control" name="pwd">
                                         </div>
 
                                       
@@ -102,10 +102,10 @@
                               <form  action="<?php echo base_url() . "User/login2"; ?>" method="POST">
                                   
                                 <div class="form-group">
-                                    <input type="text" placeholder="username" class="form-control" name="username">
+                                    <input required  type="text" placeholder="username" class="form-control" name="username">
                                   </div>
                                   <div class="form-group">
-                                    <input type="password" placeholder="password" class="form-control" name="password">
+                                    <input required  type="password" placeholder="password" class="form-control" name="password">
                                   </div>
                                   <div class="form-group form-check white">
                                       <label class="form-check-label">

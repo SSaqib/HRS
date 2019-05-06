@@ -161,10 +161,14 @@
 
         public function changePassword(){
             $password = $this->input->input_stream('password');
-            
+           $username = $this->input->post('username');
+            if($username==null)
+            {
+            $username =  $this->session->userdata('idname');
+            }
             if(strlen($password) > 2){
                 $data = array('password'=> $password);
-                $this->db->where('username','saadi');
+                $this->db->where('username',$username);
                 $this->db->update('user', $data);
                 return true;
             }

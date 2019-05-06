@@ -14,6 +14,11 @@
 			$this->load->view('home');
 		}
 
+		public function help()
+		{
+			$this->load->view('help');
+		}
+
 		public function login()
 		{
 			$this->load->view('home');
@@ -163,7 +168,11 @@
 		public function addGoal(){ 
 			
 			// $username=$this->input->post('username');
-			$username = "najam";
+			$username = $this->input->post('username');
+			if($username==null)
+			{
+				$username =  $this->session->userdata('idname');
+			}
 			$subject = $this->input->post('subject');
             $description = $this->input->post('description');
             $completed = $this->input->post('completed');
@@ -176,6 +185,8 @@
 						'success_code' => '200',
 					
 				));
+				redirect('User/goals');
+
 			}
 			else{
 				echo json_encode(array(
@@ -183,11 +194,16 @@
 						'error_code' => '101',
 					
 				));
+				redirect('User/goals');
 			}
 		}
 		public function removeGoal(){
 			// $username=$this->input->post('username');
-			$username = "najam";
+			$username = $this->input->post('username');
+			if($username==null)
+			{
+				$username =  $this->session->userdata('idname');
+			}
             $subject = $this->input->post('subject');
 			$this->load->model('Goal_Model');
 
@@ -211,7 +227,11 @@
 		public function getGoals(){
 
 			// $username=$this->input->post('username');
-			$username = "najam";
+			$username = $this->input->post('username');
+			if($username==null)
+			{
+				$username =  $this->session->userdata('idname');
+			}
 			$this->load->model('Goal_Model');
 
 			if($this->Goal_Model->getGoals($username)){
@@ -364,6 +384,26 @@
 		        }
 					
 			}
+			public function updatePassword(){
+			$this->load->model('User_Model');
+			
+			if($this->User_Model->changePassword()){
+				echo json_encode(array(
+					'message' => array(
+						'text' => 'Password updated',
+						'code' => '200',
+					),
+				));
+			}
+			else{
+				echo json_encode(array(
+					'message' => array(
+						'text' => 'Failed to update password',
+						'error-code' => '105',
+					),
+				));
+			}
+		}
 
 	}
 
